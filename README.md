@@ -357,7 +357,7 @@
             <button class="tab-btn active" id="btn-renewal" onclick="switchEstimateTab('renewal')">법인회선 재약정</button>
             <button class="tab-btn" id="btn-total" onclick="switchEstimateTab('total')">유무선 통합</button>
             <button class="tab-btn" id="btn-haiorder" onclick="switchEstimateTab('haiorder')">하이오더</button>
-            <button class="tab-btn" id="btn-bizcalc" onclick="switchEstimateTab('bizcalc')" style="background-color:#e60012; color:#fff;">🏢 BIZ 대량 계산기 (30회선 이상)</button>
+            <button class="tab-btn" id="btn-bizcalc" onclick="switchEstimateTab('bizcalc')" style="background-color:#e60012; color:#fff;">🏢 BIZ 대량 계산기 </button>
         </div>
 
         <!-- ================= [서식 1: 법인회선 재약정 견적서] ================= -->
