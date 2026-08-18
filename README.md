@@ -214,9 +214,9 @@
         input:focus, select:focus, textarea:focus { background-color: #e0f2fe !important; }
         input[readonly], select[readonly], .lock-cell {
             color: #475569 !important; -webkit-text-fill-color: #475569 !important;
-            background-color: #f1f5f9 !important; font-weight: 600;
+            background-color: #f1f5f9 !important; font-weight: 600; cursor: not-allowed;
         }
-        .blue-readonly { color: #004b8d !important; font-weight: 700; }
+        .blue-readonly { color: #004b8d !important; }
         .benefit-highlight {
             color: #d91414 !important; font-size: 13px; font-weight: 800;
             text-align: center !important; background-color: #fef2f2 !important; letter-spacing: 0.5px;
@@ -319,7 +319,7 @@
             
             <input type="password" id="authPasswordInput" class="auth-input" placeholder="••••" maxlength="20" autocomplete="current-password" />
             <button type="button" class="auth-btn" id="authSubmitBtn">확인 (접속하기)</button>
-            <div id="authErrorMsg" class="auth-error">⚠️ 비밀번호가 일치하지 않습니다. (기본 암호: 0729)</div>
+            <div id="authErrorMsg" class="auth-error">⚠️ 비밀번호가 일치하지 않습니다. (정답: 0729)</div>
             
             <div class="auth-req-link" id="toggleReqFormBtn">비밀번호가 없으신가요? (암호 신청하기)</div>
 
@@ -332,12 +332,12 @@
         </div>
     </div>
 
-    <!-- 🚨 경고 모달 레이어 -->
+    <!-- 🚨 강렬한 레드 경고 모달 레이어 -->
     <div id="redAlertOverlay" class="red-alert-overlay">
         <div class="red-alert-card">
             <div class="red-alert-icon">🚨</div>
             <div class="red-alert-title">경 고 (WARNING)</div>
-            <div class="red-alert-msg">무단 복제 및 불펌을 금지합니다.</div>
+            <div class="red-alert-msg">여긴 내가 만든 내 세상이야, 불펌금지</div>
             <button class="red-alert-btn" onclick="closeRedAlert()">확인 (닫기)</button>
         </div>
     </div>
@@ -346,9 +346,9 @@
         
         <!-- 최상단 공식 시그니처 배지 -->
         <div class="signature-badge">
-            <div style="font-size:11px; color:#0284c7; font-weight:800; letter-spacing:1px; margin-bottom:2px;">TELECOM ESTIMATE SIMULATION SYSTEM</div>
+            <div style="font-size:11px; color:#0284c7; font-weight:800; letter-spacing:1px; margin-bottom:2px;">KT CS TELECOM AUTOMATION ARCHITECT</div>
             <div style="font-size:13px; color:#1e293b; font-weight:700;">
-                🔒 본 시스템은 <span style="color:#0284c7;">(주)케이티엠앤에스</span> 공식 견적 산출 전용 시스템입니다.
+                🔒 본 시스템은 <span style="color:#0284c7;">KT CS 김영훈</span>의 지적 자산입니다. (무단 복제 및 사용 금지)
             </div>
         </div>
 
@@ -362,7 +362,7 @@
 
         <!-- ================= [서식 1: 법인회선 재약정 견적서] ================= -->
         <div class="invoice-container" id="capture-area-renewal">
-            <div class="watermark-overlay">(주)케이티엠앤에스 견적서 - 무단 복사 및 사용 금지</div>
+            <div class="watermark-overlay">KT CS 대구센터 김영훈 무단 복사 및 사용을 금지합니다</div>
             
             <div class="toolbar-area no-print-target">
                 <div class="toolbar-group">
@@ -386,37 +386,37 @@
                     <th>견적일자</th>
                     <td><input type="text" class="invoice-date blue-readonly" readonly /></td>
                     <th>사업자번호</th>
-                    <td><input type="text" value="120-87-09780" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="314-81-42683" readonly /></td>
                 </tr>
                 <tr>
                     <th>업체명</th>
                     <td><input type="text" value=" 귀하" class="client-name" id="renewal-client-name" onfocus="clearGuidance(this)" onblur="restoreGuidance(this)" /></td>
                     <th>회사명</th>
-                    <td><input type="text" value="(주)케이티엠앤에스" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="(주) KT CS" readonly /></td>
                 </tr>
                 <tr>
                     <th>사업자번호</th>
                     <td><input type="text" id="renewal-biz-num" placeholder="고객 사업자번호 입력" /></td>
                     <th>대표자명</th>
-                    <td><input type="text" value="박성열" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="박은영" readonly /></td>
                 </tr>
                 <tr>
                     <th>총 제공되는 혜택</th>
                     <td class="benefit-highlight" id="total-benefits-renewal">₩0</td>
                     <th>주소</th>
-                    <td><input type="text" value="경기도 성남시 분당구 불정로 90 KT타워" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="대전 서구 갈마로 160(괴정동) KT 인재개발원" readonly /></td>
                 </tr>
                 <tr>
                     <th>수수료</th>
                     <td><input type="text" id="fee-renewal" value="0" oninput="runBenefitCalculationsRenewal(this)" /></td>
                     <th>업종</th>
-                    <td><input type="text" value="정보통신업, 통신기기" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="정보통신업" readonly /></td>
                 </tr>
                 <tr>
                     <th>통합사은품</th>
                     <td><input type="text" id="gift-renewal" value="0" oninput="runBenefitCalculationsRenewal(this)" /></td>
                     <th>담당부서</th>
-                    <td><input type="text" value="KT M&S 동부법인지사 부산센터" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="KT CS 대구센터" readonly /></td>
                 </tr>
                 <tr>
                     <th rowspan="2">구비서류</th>
@@ -424,11 +424,27 @@
                         <span class="capture-text-node" style="font-size: 10px !important;">대표자신분증, 사업자등록증, 통장사본</span>
                     </td>
                     <th>담당자</th>
-                    <td><input type="text" id="manager-name-renewal" class="blue-readonly" value="윤혜진 과장" readonly /></td>
+                    <td>
+                        <select class="manager-select blue-readonly" onchange="updateManagerInfo(this, 'renewal')">
+                            <option value="반청용 부장" data-phone="010-3484-0709">반청용 부장</option>
+                            <option value="김문신 파트장" data-phone="010-5555-6031">김문신 파트장</option>
+                            <option value="이경태 파트장" data-phone="010-2622-6222">이경태 파트장</option>
+                            <option value="곽준섭 과장" data-phone="010-5015-9908">곽준섭 과장</option>
+                            <option value="권순일 과장" data-phone="010-5564-8610">권순일 과장</option>
+                            <option value="김영현 과장" data-phone="010-3214-0555">김영현 과장</option>
+                            <option value="김영훈 과장" data-phone="010-8290-9971" selected>김영훈 과장</option>
+                            <option value="김준엽 과장" data-phone="010-3777-8560">김준엽 과장</option>
+                            <option value="김진 과장" data-phone="010-9877-5479">김진 과장</option>
+                            <option value="박혜임 과장" data-phone="010-3311-0340">박혜임 과장</option>
+                            <option value="배민혁 과장" data-phone="010-6670-6870">배민혁 과장</option>
+                            <option value="홍성희 과장" data-phone="010-6727-9993">홍성희 과장</option>
+                            <option value="custom">직접입력</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <th>연락처</th>
-                    <td><input type="text" id="manager-phone-renewal" class="blue-readonly" value="010-9969-1904" readonly /></td>
+                    <td><input type="text" id="manager-phone-renewal" class="blue-readonly" value="010-8290-9971" readonly /></td>
                 </tr>
                 <tr>
                     <th>견적유효기간</th>
@@ -436,7 +452,7 @@
                         <span class="capture-text-node" style="color: #004b8d !important; font-weight: bold !important;">견적서 제출일로부터 30일 이내</span>
                     </td>
                     <th>이메일주소</th>
-                    <td><input type="text" id="manager-email-renewal" class="blue-readonly" value="ktmns1248591@gmail.com" readonly /></td>
+                    <td><input type="text" id="manager-email-renewal" class="blue-readonly" value="tsmobile1@naver.com" readonly /></td>
                 </tr>
             </table>
 
@@ -510,7 +526,7 @@
 
         <!-- ================= [서식 2: 유무선 통합 견적서] ================= -->
         <div class="invoice-container" id="capture-area-total" style="display: none;">
-            <div class="watermark-overlay">(주)케이티엠앤에스 견적서 - 무단 복사 및 사용 금지</div>
+            <div class="watermark-overlay">KT CS 대구센터 김영훈 무단 복사 및 사용을 금지합니다</div>
 
             <div class="toolbar-area no-print-target">
                 <div class="toolbar-group">
@@ -534,49 +550,65 @@
                     <th>견적일자</th>
                     <td><input type="text" class="invoice-date blue-readonly" readonly /></td>
                     <th>사업자번호</th>
-                    <td><input type="text" value="120-87-09780" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="314-81-42683" readonly /></td>
                 </tr>
                 <tr>
                     <th>고객명/업체명</th>
                     <td><input type="text" value=" 귀하" class="client-name" id="total-client-name" onfocus="clearGuidance(this)" onblur="restoreGuidance(this)" /></td>
                     <th>회사명</th>
-                    <td><input type="text" value="(주)케이티엠앤에스" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="(주) KT CS" readonly /></td>
                 </tr>
                 <tr>
                     <th>생년월일/사업자</th>
                     <td><input type="text" id="total-biz-num" placeholder="생년월일 또는 사업자번호" /></td>
                     <th>대표자명</th>
-                    <td><input type="text" value="박성열" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="박은영" readonly /></td>
                 </tr>
                 <tr>
                     <th>총 제공 혜택</th>
                     <td class="benefit-highlight" id="total-benefits-total">₩0</td>
                     <th>주소</th>
-                    <td><input type="text" value="경기도 성남시 분당구 불정로 90 KT타워" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="대전 서구 갈마로 160(괴정동) KT 인재개발원" readonly /></td>
                 </tr>
                 <tr>
                     <th>지원금/수수료</th>
                     <td><input type="text" id="fee-total" value="0" oninput="runBenefitCalculationsTotal(this)" /></td>
                     <th>업종</th>
-                    <td><input type="text" value="정보통신업, 통신기기" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="정보통신업" readonly /></td>
                 </tr>
                 <tr>
                     <th>통합사은품</th>
                     <td><input type="text" id="gift-total" value="0" oninput="runBenefitCalculationsTotal(this)" /></td>
                     <th>담당부서</th>
-                    <td><input type="text" value="KT M&S 동부법인지사 부산센터" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="KT CS 대구센터" readonly /></td>
                 </tr>
                 <tr>
                     <th rowspan="2">구비서류</th>
                     <td rowspan="2" class="notice-text lock-cell" style="background-color: #fafafa; font-size: 9.5px; line-height: 1.35; text-align: left !important; padding-left: 8px;">
-                        <span class="capture-text-node">대표자신분증, 사업자등록증, 통장사본</span>
+                        대표자신분증, 사업자등록증, 통장사본
                     </td>
                     <th>담당자</th>
-                    <td><input type="text" id="manager-name-total" class="blue-readonly" value="윤혜진 과장" readonly /></td>
+                    <td>
+                        <select class="manager-select blue-readonly" onchange="updateManagerInfo(this, 'total')">
+                            <option value="반청용 부장" data-phone="010-3484-0709">반청용 부장</option>
+                            <option value="김문신 파트장" data-phone="010-5555-6031">김문신 파트장</option>
+                            <option value="이경태 파트장" data-phone="010-2622-6222">이경태 파트장</option>
+                            <option value="곽준섭 과장" data-phone="010-5015-9908">곽준섭 과장</option>
+                            <option value="권순일 과장" data-phone="010-5564-8610">권순일 과장</option>
+                            <option value="김영현 과장" data-phone="010-3214-0555">김영현 과장</option>
+                            <option value="김영훈 과장" data-phone="010-8290-9971" selected>김영훈 과장</option>
+                            <option value="김준엽 과장" data-phone="010-3777-8560">김준엽 과장</option>
+                            <option value="김진 과장" data-phone="010-9877-5479">김진 과장</option>
+                            <option value="박혜임 과장" data-phone="010-3311-0340">박혜임 과장</option>
+                            <option value="배민혁 과장" data-phone="010-6670-6870">배민혁 과장</option>
+                            <option value="홍성희 과장" data-phone="010-6727-9993">홍성희 과장</option>
+                            <option value="custom">직접입력</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <th>연락처</th>
-                    <td><input type="text" id="manager-phone-total" class="blue-readonly" value="010-9969-1904" readonly /></td>
+                    <td><input type="text" id="manager-phone-total" class="blue-readonly" value="010-8290-9971" readonly /></td>
                 </tr>
                 <tr>
                     <th>견적유효기간</th>
@@ -584,7 +616,7 @@
                         <span class="capture-text-node" style="color: #004b8d !important; font-weight: bold !important;">견적서 제출일로부터 30일 이내</span>
                     </td>
                     <th>이메일주소</th>
-                    <td><input type="text" id="manager-email-total" class="blue-readonly" value="ktmns1248591@gmail.com" readonly /></td>
+                    <td><input type="text" id="manager-email-total" class="blue-readonly" value="tsmobile1@naver.com" readonly /></td>
                 </tr>
             </table>
 
@@ -671,7 +703,7 @@
 
         <!-- ================= [서식 3: 하이오더 견적서] ================= -->
         <div class="invoice-container" id="capture-area-haiorder" style="display: none;">
-            <div class="watermark-overlay">(주)케이티엠앤에스 견적서 - 무단 복사 및 사용 금지</div>
+            <div class="watermark-overlay">KT CS 대구센터 김영훈 무단 복사 및 사용을 금지합니다</div>
 
             <div class="toolbar-area no-print-target">
                 <div class="toolbar-group">
@@ -695,25 +727,25 @@
                     <th>견적일자</th>
                     <td><input type="text" class="invoice-date blue-readonly" readonly /></td>
                     <th>사업자번호</th>
-                    <td><input type="text" value="120-87-09780" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="314-81-42683" readonly /></td>
                 </tr>
                 <tr>
                     <th>업체명</th>
                     <td><input type="text" value=" 귀하" class="client-name" id="hai-store-name" onfocus="clearGuidance(this)" onblur="restoreGuidance(this)" /></td>
                     <th>회사명</th>
-                    <td><input type="text" value="(주)케이티엠앤에스" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="(주) KT CS" readonly /></td>
                 </tr>
                 <tr>
                     <th>서비스명</th>
-                    <td><input type="text" value="하이오더 외" /></td>
+                    <td><input type="text" value="하이오더 외" readonly /></td>
                     <th>대표자명</th>
-                    <td><input type="text" value="박성열" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="박은영" readonly /></td>
                 </tr>
                 <tr class="amount-row">
                     <th>월요금(VAT포함)</th>
                     <td class="benefit-highlight" id="topQuoteAmount">0원</td>
                     <th>주소</th>
-                    <td><input type="text" value="경기도 성남시 분당구 불정로 90 KT타워" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="대전 서구 갈마로 160(괴정동) KT 인재개발원" readonly /></td>
                 </tr>
                 <tr>
                     <th>고객 오퍼</th>
@@ -724,13 +756,13 @@
                         </div>
                     </td>
                     <th>업종</th>
-                    <td><input type="text" value="정보통신업, 통신기기" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="정보통신업" readonly /></td>
                 </tr>
                 <tr>
                     <th>비고</th>
-                    <td><input type="text" value="테이블오더 솔루션" /></td>
+                    <td><input type="text" value="테이블오더 솔루션" readonly /></td>
                     <th>담당부서</th>
-                    <td><input type="text" value="KT M&S 동부법인지사 부산센터" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="KT CS 대구센터" readonly /></td>
                 </tr>
                 <tr>
                     <th rowspan="2">구비서류</th>
@@ -738,11 +770,27 @@
                         <span class="capture-text-node" style="font-size: 10px !important;">대표자신분증, 사업자등록증, 통장사본</span>
                     </td>
                     <th>담당자</th>
-                    <td><input type="text" id="manager-name-haiorder" class="blue-readonly" value="윤혜진 과장" readonly /></td>
+                    <td>
+                        <select class="manager-select blue-readonly" onchange="updateManagerInfo(this, 'haiorder')">
+                            <option value="반청용 부장" data-phone="010-3484-0709">반청용 부장</option>
+                            <option value="김문신 파트장" data-phone="010-5555-6031">김문신 파트장</option>
+                            <option value="이경태 파트장" data-phone="010-2622-6222">이경태 파트장</option>
+                            <option value="곽준섭 과장" data-phone="010-5015-9908">곽준섭 과장</option>
+                            <option value="권순일 과장" data-phone="010-5564-8610">권순일 과장</option>
+                            <option value="김영현 과장" data-phone="010-3214-0555">김영현 과장</option>
+                            <option value="김영훈 과장" data-phone="010-8290-9971" selected>김영훈 과장</option>
+                            <option value="김준엽 과장" data-phone="010-3777-8560">김준엽 과장</option>
+                            <option value="김진 과장" data-phone="010-9877-5479">김진 과장</option>
+                            <option value="박혜임 과장" data-phone="010-3311-0340">박혜임 과장</option>
+                            <option value="배민혁 과장" data-phone="010-6670-6870">배민혁 과장</option>
+                            <option value="홍성희 과장" data-phone="010-6727-9993">홍성희 과장</option>
+                            <option value="custom">직접입력</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <th>연락처</th>
-                    <td><input type="text" id="manager-phone-haiorder" class="blue-readonly" value="010-9969-1904" readonly /></td>
+                    <td><input type="text" id="manager-phone-haiorder" class="blue-readonly" value="010-8290-9971" readonly /></td>
                 </tr>
                 <tr>
                     <th>견적유효기간</th>
@@ -750,7 +798,7 @@
                         <span class="capture-text-node" style="color: #004b8d !important; font-weight: bold !important;">견적서 제출일로부터 30일 이내</span>
                     </td>
                     <th>이메일주소</th>
-                    <td><input type="text" id="manager-email-haiorder" class="blue-readonly" value="ktmns1248591@gmail.com" readonly /></td>
+                    <td><input type="text" id="manager-email-haiorder" class="blue-readonly" value="tsmobile1@naver.com" readonly /></td>
                 </tr>
             </table>
 
@@ -915,7 +963,7 @@
 
         <!-- ================= [서식 4: BIZ 대량 계산기] ================= -->
         <div class="invoice-container" id="capture-area-bizcalc" style="display: none;">
-            <div class="watermark-overlay">(주)케이티엠앤에스 견적서 - 무단 복사 및 사용 금지</div>
+            <div class="watermark-overlay">KT CS 대구센터 김영훈 무단 복사 및 사용을 금지합니다</div>
 
             <div class="toolbar-area no-print-target">
                 <div class="toolbar-group">
@@ -945,37 +993,37 @@
                     <th>견적일자</th>
                     <td><input type="text" class="invoice-date blue-readonly" readonly /></td>
                     <th>사업자번호</th>
-                    <td><input type="text" value="120-87-09780" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="314-81-42683" readonly /></td>
                 </tr>
                 <tr>
                     <th>업체명</th>
                     <td><input type="text" id="biz-client-company" value="귀하" placeholder="고객 업체명 입력" /></td>
                     <th>회사명</th>
-                    <td><input type="text" value="(주)케이티엠앤에스" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="(주) KT CS" readonly /></td>
                 </tr>
                 <tr>
                     <th>사업자번호</th>
                     <td><input type="text" id="biz-client-bizno" placeholder="고객 사업자번호 입력" /></td>
                     <th>대표자명</th>
-                    <td><input type="text" value="박성열" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="박은영" readonly /></td>
                 </tr>
                 <tr>
                     <th>총 제공 혜택</th>
                     <td class="benefit-highlight" id="totalBenefitVal">₩0</td>
                     <th>주소</th>
-                    <td><input type="text" value="경기도 성남시 분당구 불정로 90 KT타워" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="대전 서구 갈마로 160(괴정동) KT 인재개발원" readonly /></td>
                 </tr>
                 <tr>
                     <th>수수료</th>
                     <td><input type="number" id="feeVal" value="0" min="0" oninput="updateBenefit()" style="text-align:center;"></td>
                     <th>업종</th>
-                    <td><input type="text" value="정보통신업, 통신기기" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="정보통신업" readonly /></td>
                 </tr>
                 <tr>
                     <th>통합사은품</th>
                     <td><input type="number" id="giftVal" value="0" min="0" oninput="updateBenefit()" style="text-align:center;"></td>
                     <th>담당부서</th>
-                    <td><input type="text" value="KT M&S 동부법인지사 부산센터" class="lock-cell" readonly /></td>
+                    <td><input type="text" value="KT CS 대구센터" readonly /></td>
                 </tr>
                 <tr>
                     <th rowspan="2">구비서류</th>
@@ -983,11 +1031,27 @@
                         <span class="capture-text-node">대표자신분증, 사업자등록증, 통장사본</span>
                     </td>
                     <th>담당자</th>
-                    <td><input type="text" id="manager-name-bizcalc" class="blue-readonly" value="윤혜진 과장" readonly /></td>
+                    <td>
+                        <select class="manager-select blue-readonly" onchange="updateManagerInfo(this, 'bizcalc')">
+                            <option value="반청용 부장" data-phone="010-3484-0709">반청용 부장</option>
+                            <option value="김문신 파트장" data-phone="010-5555-6031">김문신 파트장</option>
+                            <option value="이경태 파트장" data-phone="010-2622-6222">이경태 파트장</option>
+                            <option value="곽준섭 과장" data-phone="010-5015-9908">곽준섭 과장</option>
+                            <option value="권순일 과장" data-phone="010-5564-8610">권순일 과장</option>
+                            <option value="김영현 과장" data-phone="010-3214-0555">김영현 과장</option>
+                            <option value="김영훈 과장" data-phone="010-8290-9971" selected>김영훈 과장</option>
+                            <option value="김준엽 과장" data-phone="010-3777-8560">김준엽 과장</option>
+                            <option value="김진 과장" data-phone="010-9877-5479">김진 과장</option>
+                            <option value="박혜임 과장" data-phone="010-3311-0340">박혜임 과장</option>
+                            <option value="배민혁 과장" data-phone="010-6670-6870">배민혁 과장</option>
+                            <option value="홍성희 과장" data-phone="010-6727-9993">홍성희 과장</option>
+                            <option value="custom">직접입력</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <th>연락처</th>
-                    <td><input type="text" id="manager-phone-bizcalc" class="blue-readonly" value="010-9969-1904" readonly /></td>
+                    <td><input type="text" id="manager-phone-bizcalc" class="blue-readonly" value="010-8290-9971" readonly /></td>
                 </tr>
                 <tr>
                     <th>견적유효기간</th>
@@ -995,7 +1059,7 @@
                         <span class="capture-text-node" style="color: #004b8d !important; font-weight: bold !important;">견적서 제출일로부터 30일 이내</span>
                     </td>
                     <th>이메일주소</th>
-                    <td><input type="text" id="manager-email-bizcalc" class="blue-readonly" value="ktmns1248591@gmail.com" readonly /></td>
+                    <td><input type="text" id="manager-email-bizcalc" class="blue-readonly" value="tsmobile1@naver.com" readonly /></td>
                 </tr>
             </table>
 
@@ -1033,7 +1097,7 @@
             <div class="summary-banner">
                 <div>
                     <div style="font-size: 11px; font-weight: bold; color: #1e293b;" id="summaryTitle">■ 공동청약 적용 총 월정액 (VAT포함)</div>
-                    <div class="summary-sub" id="summaryNotice">B2B 대량 공동청약 단가 기준</div>
+                    <div class="summary-sub" id="summaryNotice">KT CS 대구센터 B2B 대량 공동청약 단가 기준</div>
                 </div>
                 <div style="text-align: right;">
                     <div class="summary-val" id="totalMonthly">0 원 / 월</div>
@@ -1084,7 +1148,7 @@
                 <tr>
                     <th style="text-align: center !important;">유의 사항</th>
                     <td class="notice-text" style="padding: 10px; background-color: #fafafa; color: #555 !important;">
-                        1. 상기 BIZ 대량 인터넷/TV 견적은 B2B 공동청약 할인율이 반영된 산출 내역입니다.<br />
+                        1. 상기 BIZ 대량 인터넷/TV 견적은 KT CS 대구센터 정식 B2B 공동청약 할인율이 반영된 산출 내역입니다.<br />
                         2. 인터넷 패밀리 회선 수는 동일 명의당 최대 2회선까지 결합 가능하며, 약정 세부조건은 이용약관에 준합니다.<br />
                         3. 현장 구내 설비 환경 및 장애 발생 시 KT 고객센터(국번없이 100번) 또는 담당부서로 상담 바랍니다.
                     </td>
@@ -1167,7 +1231,7 @@
                 tv: {
                     "OTV Biz 벌크 슬림": { base: 5445, addNormal: 5445, install: 11000 },
                     "OTV Biz 벌크 베이직": { base: 5940, addNormal: 5940, install: 11000 },
-                    "OTV Biz 벌크 라이트": { base: 6435, addNormal: 6435, install: 11000 },
+                    "OTV Biz 라이트": { base: 6435, addNormal: 6435, install: 11000 },
                     "OTV Biz 벌크 에센스": { base: 8415, addNormal: 8415, install: 11000 }
                 },
                 stb: { "올인원 STB": 3300, "STB A": 4400 },
@@ -1505,12 +1569,30 @@
             else if(!el.value.endsWith(" 귀하")) { el.value = el.value + " 귀하"; }
         }
 
+        function updateManagerInfo(selectEl, scope) {
+            const selectedOption = selectEl.options[selectEl.selectedIndex];
+            const phoneInput = document.getElementById(`manager-phone-${scope}`);
+            const emailInput = document.getElementById(`manager-email-${scope}`);
+            if(!phoneInput) return;
+
+            if (selectedOption.value === 'custom') {
+                phoneInput.value = ''; if(emailInput) emailInput.value = '';
+                phoneInput.removeAttribute('readonly'); if(emailInput) emailInput.removeAttribute('readonly');
+                phoneInput.placeholder = '연락처 직접 입력'; phoneInput.focus();
+            } else {
+                phoneInput.value = selectedOption.getAttribute('data-phone') || '';
+                if(emailInput) emailInput.value = selectedOption.getAttribute('data-email') || 'tsmobile1@naver.com';
+                phoneInput.setAttribute('readonly', true); if(emailInput) emailInput.setAttribute('readonly', true);
+            }
+        }
+
         function checkDateValue(el) {
             if (el.value) { el.classList.add('has-value'); } else { el.classList.remove('has-value'); }
         }
 
         function sendQuoteDataGas() {
-            let payload = { quoteType: activeTab, userPhone: "01099691904", consultDay: '견적서 즉시발행' };
+            const userPhone = "01099691904";
+            let payload = { quoteType: activeTab, userPhone: userPhone, consultDay: '견적서 즉시발행' };
             fetch(GAS_URL, {
                 method: 'POST', mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
@@ -1542,7 +1624,7 @@
                 recalcAllHaiorder();
             } else {
                 targetContainer.querySelectorAll('input[type="text"]:not([readonly]), textarea').forEach(inp => {
-                    if(!inp.classList.contains('invoice-date')) { inp.value = ''; }
+                    if(!inp.classList.contains('invoice-date') && !inp.classList.contains('blue-readonly')) { inp.value = ''; }
                 });
                 recalcCurrentActiveTab();
             }
@@ -1552,9 +1634,7 @@
             const targetContainer = document.getElementById(`capture-area-${activeTab}`);
             const formData = {};
             targetContainer.querySelectorAll('input, select, textarea').forEach((el, index) => {
-                if(!el.readOnly) {
-                    formData[el.id ? `id_${el.id}` : `idx_${index}`] = el.value;
-                }
+                formData[el.id ? `id_${el.id}` : `idx_${index}`] = el.value;
             });
             localStorage.setItem(`saved_estimate_${activeTab}`, JSON.stringify(formData));
             alert('입력 내용이 브라우저에 저장되었습니다.');
@@ -1568,11 +1648,9 @@
             const formData = JSON.parse(savedData);
             const targetContainer = document.getElementById(`capture-area-${activeTab}`);
             targetContainer.querySelectorAll('input, select, textarea').forEach((el, index) => {
-                if(!el.readOnly) {
-                    const kId = `id_${el.id}`, kIdx = `idx_${index}`;
-                    if(el.id && formData[kId] !== undefined) el.value = formData[kId];
-                    else if(formData[kIdx] !== undefined) el.value = formData[kIdx];
-                }
+                const kId = `id_${el.id}`, kIdx = `idx_${index}`;
+                if(el.id && formData[kId] !== undefined) el.value = formData[kId];
+                else if(formData[kIdx] !== undefined) el.value = formData[kIdx];
             });
             recalcCurrentActiveTab();
         }
