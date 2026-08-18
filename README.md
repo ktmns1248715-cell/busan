@@ -913,7 +913,7 @@
             </table>
         </div>
 
-        <!-- ================= [서식 4: BIZ 대량 계산기 (30회선 이상 기준 적용)] ================= -->
+        <!-- ================= [서식 4: BIZ 대량 계산기 ] ================= -->
         <div class="invoice-container" id="capture-area-bizcalc" style="display: none;">
             <div class="watermark-overlay">(주)케이티엠앤에스 견적서 - 무단 복사 및 사용 금지</div>
 
